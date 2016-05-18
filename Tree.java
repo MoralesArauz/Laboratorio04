@@ -5,7 +5,7 @@ public interface Tree<T> {
 
 	boolean isEmpty();
 	Node<T> getRoot();
-	boolean exillllklsts(T key);
+	boolean exists(T key);
 	int getNumberOfNodes();
 	int getNumberOfDescendants(Node<T> node);
 	LinkedList<Node<T>> getPreOrderTraversal();
