@@ -240,7 +240,7 @@ public class LinkedList<E extends Comparable<E>> implements List<E> {
 			}
 		}*/
 		
-		return false;
+		return this.find(element) != -1;
 	}
 	
 	/**
