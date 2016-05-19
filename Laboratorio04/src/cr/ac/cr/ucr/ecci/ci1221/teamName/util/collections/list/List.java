@@ -14,7 +14,7 @@ import cr.ac.cr.ucr.ecci.ci1221.teamName.util.collections.Sortable;
  *
  * @param <E> the type of the elements that the list holds.
  */
-public interface List<E> extends Collection<E> {
+public interface List<E> extends Collection<E>, Sortable {
 
   /**
    * Adds the given element to the given position.
