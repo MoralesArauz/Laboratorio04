@@ -37,7 +37,7 @@ public class LinkedList<E extends Comparable<E>> implements List<E> {
 		ListNode<E> prevElement = head; //Puntero para iterar hasta donde debe ir el nuevo nodo
 		
 		if(position != 0){ //No estoy agregando en la cabeza.
-			for(int i=0; i<position-1; i++){ //Avanzo hasta el nodo que corresponde a la posiciÛn anterior a la deseada.
+			for(int i=0; i<position-1; i++){ //Avanzo hasta el nodo que corresponde a la posici√≥n anterior a la deseada.
 				prevElement = prevElement.getNext();		
 			}	
 			
@@ -74,7 +74,7 @@ public class LinkedList<E extends Comparable<E>> implements List<E> {
 			if(position == 0){ // Quiero borrar la cabeza
 			
 				head = head.getNext(); //Borro la cabeza
-				if(size==1){ //Si borrÈ el unico elemento de la lista, aseguro que la cola no apunte hacia ese elemento
+				if(size==1){ //Si borr√© el unico elemento de la lista, aseguro que la cola no apunte hacia ese elemento
 					tail = head;
 				}
 			
@@ -113,20 +113,20 @@ public class LinkedList<E extends Comparable<E>> implements List<E> {
 	public int find(E element) {
 	
 		ListNode<E> nodeElement = head; //Nodo para iterar
-		int position = 0; //Guarda la posiciÛn que voy a devolver
+		int position = 0; //Guarda la posici√≥n que voy a devolver
 		
-		if(head != null){ //Lista no est· vacia
+	/*	if(head != null){ //Lista no est√° vacia
 			while(nodeElement.getTag().compareTo(element) != 0 && nodeElement != tail){ //Mientras no encuentre el elemento y no llegue a la cola
 				nodeElement = nodeElement.getNext();
 				position++;
 			}
-			if(nodeElement.getTag().compareTo(element) != 0){ //Si parÈ el while porque lleguÈ a la cola y aun no encontrÈ el elemento
+			if(nodeElement.getTag().compareTo(element) != 0){ //Si par√© el while porque llegu√© a la cola y aun no encontr√© el elemento
 				position = -1;
 			}
-		}else{ //La lista est· vacia
+		}else{ //La lista est√° vacia
 			position = -1;
 		}
-		
+		*/
 		return position;
 	}
 	
@@ -147,7 +147,7 @@ public class LinkedList<E extends Comparable<E>> implements List<E> {
 		
 		ListNode<E> element = head; //Nodo para iterar
 		
-		for(int i=0; i<position; i++){ //Avanzo hasta la posiciÛn
+		for(int i=0; i<position; i++){ //Avanzo hasta la posici√≥n
 			element = element.getNext();
 		}
 		
@@ -195,7 +195,7 @@ public class LinkedList<E extends Comparable<E>> implements List<E> {
         ListNode<E> elementNode = new ListNode<E>(); //Nuevo nodo por agregar
         elementNode.setTag(element); //Asigno el contenido del nodo
 		
-        if (head==null){ //La lista est· vacia
+        if (head==null){ //La lista est√° vacia
             	head = elementNode;		
             	tail = elementNode;	
 				
@@ -216,7 +216,7 @@ public class LinkedList<E extends Comparable<E>> implements List<E> {
 	public void remove(E element) {
 		
         int position = this.find(element); //Obtengo la posicion de la primera aparicion del elemento en la lista
-        this.remove(position); //Remuevo esa posiciÛn
+        this.remove(position); //Remuevo esa posici√≥n
 	}
 	
 	/**
@@ -228,19 +228,19 @@ public class LinkedList<E extends Comparable<E>> implements List<E> {
 	@Override
 	public boolean contains(E element) {
 		
-		ListNode<E> nodeElement = head; //Nodo para iterar
+	/*	ListNode<E> nodeElement = head; //Nodo para iterar
 		
-		if(head != null){//Lista no est· vacia
+		if(head != null){//Lista no est√° vacia
 		
 			while(nodeElement.getTag().compareTo(element) != 0 && nodeElement != tail){// Mientras no lo encuentre y no llegue a la cola
 				nodeElement = nodeElement.getNext();
 			}
-			if(nodeElement.getTag().compareTo(element) == 0){ //Verifico si encontrÈ el elemento en caso de parar la busqueda por llegar a la cola
+			if(nodeElement.getTag().compareTo(element) == 0){ //Verifico si encontr√© el elemento en caso de parar la busqueda por llegar a la cola
 				return true;
 			}
-		}
+		}*/
 		
-		return false;
+		return this.find(element) != -1;
 	}
 	
 	/**
@@ -303,7 +303,7 @@ public class LinkedList<E extends Comparable<E>> implements List<E> {
 	*/
 	private LinkedList<E> mergeSort(){
 		
-		if(size < 2){ //Si es menor que 2 ya est· ordenada.
+		if(size < 2){ //Si es menor que 2 ya est√° ordenada.
 			return this;
 			
 		}else{
@@ -342,7 +342,7 @@ public class LinkedList<E extends Comparable<E>> implements List<E> {
 		
 		while(evens.isEmpty() != true && odds.isEmpty() != true){ //Recorro las listas agregando el menor entre ambos a la nueva lista.
 		
-			if(itENode.getTag().compareTo(itONode.getTag()) < 0) { //Agrego al menor a la nueva lista y lo elimino de su lista original
+		/*	if(itENode.getTag().compareTo(itONode.getTag()) < 0) { //Agrego al menor a la nueva lista y lo elimino de su lista original
 				mergedL.add(itENode.getTag());
 				itENode = itENode.getNext();
 				evens.remove(0);
@@ -350,7 +350,7 @@ public class LinkedList<E extends Comparable<E>> implements List<E> {
 				mergedL.add(itONode.getTag());
 				itONode = itONode.getNext();
 				odds.remove(0);
-			}
+			}*/
 		}
 		
 		while(evens.isEmpty() != true){ //Agrego los elementos restantes en evens.*Si este ciclo ejecuta el siguiente no.
